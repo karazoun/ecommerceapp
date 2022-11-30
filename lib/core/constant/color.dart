@@ -7,4 +7,5 @@ class AppColor {
   static const Color backGroundcolor = Color.fromARGB(255, 250, 250, 250);
   static const Color authcolor = Color(0xff475C67);
   static const Color authtextcolor = Color(0xff0EE1AE);
+  static const Color alertbtncolor = Color(0xffF70000);
 }

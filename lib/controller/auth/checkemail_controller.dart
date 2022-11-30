@@ -2,26 +2,20 @@ import 'package:ecommerceapp/core/constant/routesnames.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-abstract class ForgetPasswordController extends GetxController {
+abstract class CheckEmailController extends GetxController {
   checkEmail();
-  goToVerifyCode();
+  goToSuccessSignUp();
 }
 
-class ForgetPasswordControllerImp extends ForgetPasswordController {
-  GlobalKey<FormState> formstate = GlobalKey<FormState>();
+class CheckEmailControllerImp extends CheckEmailController {
   late TextEditingController email;
 
   @override
   checkEmail() {}
 
   @override
-  goToVerifyCode() {
-    var formdata = formstate.currentState;
-    if (formdata!.validate()) {
-      Get.offNamed(AppRoute.verifyCode);
-    } else {
-      print("Not valid");
-    }
+  goToSuccessSignUp() {
+    Get.offNamed(AppRoute.successSignUp);
   }
 
   @override

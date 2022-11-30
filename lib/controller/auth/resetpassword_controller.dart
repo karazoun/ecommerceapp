@@ -1,17 +1,16 @@
 import 'package:ecommerceapp/core/constant/routesnames.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-abstract class LoginController extends GetxController {
-  login();
-  goToSignUp();
-  goToForgetPassword();
+abstract class ResetPasswordController extends GetxController {
+  resetpassword();
+  goToSuccessResetPassword();
 }
 
-class LoginControllerImp extends LoginController {
+class ResetPasswordControllerImp extends ResetPasswordController {
   GlobalKey<FormState> formstate = GlobalKey<FormState>();
-  late TextEditingController email;
   late TextEditingController password;
+  late TextEditingController repassword;
 
   bool isShowPassword = true;
 
@@ -21,35 +20,28 @@ class LoginControllerImp extends LoginController {
   }
 
   @override
-  login() {
+  resetpassword() {}
+
+  @override
+  goToSuccessResetPassword() {
     if (formstate.currentState!.validate()) {
-      print("valid");
+      Get.offNamed(AppRoute.successResetPassword);
     } else {
       print("Not valid");
     }
   }
 
   @override
-  goToSignUp() {
-    Get.offNamed(AppRoute.signUp);
-  }
-
-  @override
   void onInit() {
-    email = TextEditingController();
     password = TextEditingController();
+    repassword = TextEditingController();
     super.onInit();
   }
 
   @override
   void dispose() {
-    email.dispose();
     password.dispose();
+    repassword.dispose();
     super.dispose();
-  }
-
-  @override
-  goToForgetPassword() {
-    Get.toNamed(AppRoute.forgetPassword);
   }
 }
