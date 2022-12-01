@@ -4,7 +4,6 @@ import 'package:get/get.dart';
 import 'core/localization/translation.dart';
 import 'core/services/services.dart';
 import 'routes.dart';
-import 'view/screen/language.dart';
 
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -25,8 +24,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       locale: controller.language,
       theme: controller.appTheme,
-      home: const Language(),
-      routes: routes,
+      getPages: routes,
     );
   }
 }
